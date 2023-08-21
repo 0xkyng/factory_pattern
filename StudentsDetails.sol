@@ -38,4 +38,9 @@ contract StudentDetails {
         // emit the event
         emit Admitted(_name, _gender, _age, _id);
     }
+
+    // evict a student
+    function evictStudent(uint _id) external onlyOwner {
+        delete idToStudent[_id];
+    }
 }
