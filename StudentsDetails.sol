@@ -43,4 +43,9 @@ contract StudentDetails {
     function evictStudent(uint _id) external onlyOwner {
         delete idToStudent[_id];
     }
+
+    // retrieve a student
+    function retrieveStudent(uint _id) external  view onlyOwner returns(Student memory _newStudent) {
+        _newStudent = idToStudent[_id];
+    }
 }
