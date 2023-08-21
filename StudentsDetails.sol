@@ -23,4 +23,14 @@ contract StudentDetails {
         require(msg.sender == principal);
         _;
     }
+
+    // add a student 
+    function addStudent(string memory _name, string memory _gender, uint _age) external onlyOwner {
+        id = id + 1; // assigning to storgage
+        uint _id = id; // raeding from storage
+        Student storage newStudent = idToStudent[_id];
+        newStudent.name = _name;
+        newStudent.age = _age;
+        newStudent.gender = _gender;
+    }
 }
