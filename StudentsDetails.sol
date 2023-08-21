@@ -15,6 +15,8 @@ contract StudentDetails {
 
     mapping (uint => Student) idToStudent;
 
+    event Admitted(string indexed _name, string _gender, uint _age, uint indexed _id);
+
     constructor(address _principal) {
         principal = _principal;
     }
@@ -32,5 +34,8 @@ contract StudentDetails {
         newStudent.name = _name;
         newStudent.age = _age;
         newStudent.gender = _gender;
+
+        // emit the event
+        emit Admitted(_name, _gender, _age, _id);
     }
 }
