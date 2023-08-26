@@ -14,4 +14,9 @@ contract FactoryContract {
         Details.push(newDetails);
     }
 
+    function sdStore(uint _studentdetailsIndex, uint _newDetails) public {
+        StudentDetails newDetails = Details[_studentdetailsIndex];
+        newDetails.store(_newDetails);
+    }
+
 }
