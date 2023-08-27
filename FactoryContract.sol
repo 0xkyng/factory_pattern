@@ -19,6 +19,7 @@ contract FactoryContract {
         newDetails.store(_newDetails);
     }
 
+    // Get the set student detail
     function sdGet(uint _studentDetailsIndex) public returns(uint) {
         StudentDetails newDetails = Details[_studentDetailsIndex];
         return newDetails.retrieve();
